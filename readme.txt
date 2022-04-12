@@ -13,14 +13,3 @@ Tools: JSoup (-1.13.1) Library, JavaFX (-sdk16) Library, IntelliJ IDEA, Scene Bu
 Set-up: The libraries used are located in the ".idea\libraries" folder.
 	The configuration of the JavaFX Library needs to be set. 
 	The paths of file readers and file writers needs to be updated according to the location of the folder.
-
-
-Group Members: 
-
-Emirkan Derköken: Classes and Web Scraping Folders
-
-Barış Yıldırım: Web Scraping and User Interface
-
-Nisa Yılmaz: User Interface Folder
-
-Tuğrul Sağlam: Classes Folder and User Interface Design
