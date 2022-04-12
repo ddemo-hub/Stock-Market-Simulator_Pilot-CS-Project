@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crpController">
+    <children>
+        <Pane layoutY="61.0" prefHeight="640.0" prefWidth="200.0" style="-fx-background-color: #54457F;">
+            <children>
+                <Pane layoutY="-90.0" prefHeight="95.0" prefWidth="1050.0" style="-fx-background-color: #FFFFFF;" />
+                <Button fx:id="stock" layoutY="174.0" mnemonicParsing="false" onAction="#stockHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="STOCK MARKET" textFill="WHITE" />
+                <Button fx:id="foreign" layoutY="280.0" mnemonicParsing="false" onAction="#foreignHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="FOREIGN CURRENCY" textFill="WHITE" />
+                <Button fx:id="crypto" layoutY="333.0" mnemonicParsing="false" onAction="#cryptoHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="CRYPTO CURRENCY" textFill="WHITE" />
+                <Button fx:id="profile" layoutY="386.0" mnemonicParsing="false" onAction="#profileHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="PROFILE" textFill="WHITE" />
+                <Button fx:id="stock1" layoutY="227.0" mnemonicParsing="false" onAction="#metalHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="METAL MARKET" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Pane layoutX="200.0" layoutY="66.0" prefHeight="64.0" prefWidth="851.0" style="-fx-background-color: #54457F;">
+            <children>
+                <Label layoutX="58.0" layoutY="21.0" prefHeight="29.0" prefWidth="149.0" text="Crypto Currency" textFill="WHITE">
+                    <font>
+                        <Font name="AGA Arabesque Desktop" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <SplitPane dividerPositions="0.5" layoutX="200.0" layoutY="130.0" orientation="VERTICAL" prefHeight="576.0" prefWidth="851.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <TableView fx:id="crTable" layoutX="-194.0" layoutY="-5.0" prefHeight="284.0" prefWidth="849.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <columns>
+                        <TableColumn fx:id="crName" prefWidth="110.39999085664749" text="Name" />
+                        <TableColumn fx:id="crValue" prefWidth="117.59999084472656" text="Value" />
+                        <TableColumn fx:id="crLast" prefWidth="119.20001220703125" text="Last" />
+                        <TableColumn fx:id="crUsable" prefWidth="127.199951171875" text="Usable Coin" />
+                        <TableColumn fx:id="crTotal" prefWidth="131.19989013671875" text="Total Coin" />
+                        <TableColumn fx:id="crVolume" prefWidth="116.0" text="Volume" />
+                        <TableColumn fx:id="crChange" prefWidth="151.199951171875" text="\%Change" />
+                     </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="850.0">
+                    <children>
+                        <ChoiceBox fx:id="dropdown" layoutX="40.0" layoutY="38.0" prefWidth="150.0" />
+                        <TextField fx:id="txtBuy" layoutX="41.0" layoutY="136.0" />
+                        <Button fx:id="btnBuy" layoutX="526.0" layoutY="136.0" mnemonicParsing="false" onAction="#buyCrypto" prefHeight="26.0" prefWidth="51.0" text="Buy" />
+                        <Button fx:id="btnSell" layoutX="526.0" layoutY="185.0" mnemonicParsing="false" onAction="#sellCrypto" prefHeight="26.0" prefWidth="51.0" text="Sell" />
+                        <TextField fx:id="txtSell" layoutX="41.0" layoutY="186.0" />
+                        <Label fx:id="lblValue" layoutX="40.0" layoutY="79.0" prefHeight="30.0" prefWidth="70.0" text="Value:" textAlignment="CENTER" />
+                        <Button fx:id="btnUpdate" layoutX="772.0" layoutY="38.0" mnemonicParsing="false" onAction="#updateTable" text="Update" />
+                        <Label fx:id="lblBuy" layoutX="318.0" layoutY="140.0" prefHeight="18.0" prefWidth="200.0" />
+                        <Label fx:id="lblSell" layoutX="319.0" layoutY="189.0" prefHeight="18.0" prefWidth="200.0" />
+                        <Button fx:id="buyCalculate" layoutX="203.0" layoutY="136.0" mnemonicParsing="false" onAction="#calculateBuy" text="Calculate Value" />
+                        <Button fx:id="sellCalculate" layoutX="203.0" layoutY="185.0" mnemonicParsing="false" onAction="#calculateSell" text="Calculate Value" />
+                        <Label fx:id="valueShow" layoutX="110.0" layoutY="79.0" prefHeight="30.0" prefWidth="106.0" />
+                        <Label fx:id="balance" alignment="CENTER_RIGHT" layoutX="343.0" layoutY="84.0" prefHeight="18.0" prefWidth="162.0" textAlignment="JUSTIFY" />
+                        <Label fx:id="lblBalance" layoutX="238.0" layoutY="85.0" text="Balance:" />
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+
+    </children>
+</AnchorPane>

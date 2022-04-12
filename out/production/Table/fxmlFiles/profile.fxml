@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1050.0" style="-fx-background-color: #EFEFEF;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="profileController">
+    <children>
+        <Pane layoutY="61.0" prefHeight="640.0" prefWidth="200.0" style="-fx-background-color: #54457F;">
+            <children>
+                <Pane layoutY="-90.0" prefHeight="95.0" prefWidth="1050.0" style="-fx-background-color: #FFFFFF;">
+                    <children>
+                        <Label layoutX="865.0" layoutY="39.0" prefHeight="53.0" prefWidth="142.0" text="John Doe">
+                            <font>
+                                <Font size="19.0" />
+                            </font>
+                        </Label>
+      
+                        <Text fill="#54457f" layoutX="71.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STOCK SIMULATOR" wrappingWidth="323.3999755859372">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                            <stroke>
+                                <LinearGradient endX="1.0" endY="1.0">
+                                    <stops>
+                                        <Stop>
+                                            <color>
+                                                <Color />
+                                            </color>
+                                        </Stop>
+                                        <Stop offset="1.0">
+                                            <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                            </color>
+                                        </Stop>
+                                    </stops>
+                                </LinearGradient>
+                            </stroke>
+                        </Text>
+                    </children>
+            </Pane>
+                <Button fx:id="stock" layoutY="174.0" mnemonicParsing="false" onAction="#stockHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="STOCK MARKET" textFill="WHITE" />
+                <Button fx:id="foreign" layoutY="280.0" mnemonicParsing="false" onAction="#foreignHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="FOREIGN CURRENCY" textFill="WHITE" />
+                <Button fx:id="crypto" layoutY="333.0" mnemonicParsing="false" onAction="#cryptoHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="CRYPTO CURRENCY" textFill="WHITE" />
+                <Button fx:id="profile" layoutY="386.0" mnemonicParsing="false" onAction="#profileHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="PROFILE" textFill="WHITE" />
+                <Button fx:id="stock1" layoutY="227.0" mnemonicParsing="false" onAction="#metalHandler" prefHeight="53.0" prefWidth="200.0" style="-fx-background-color: #54457F;" text="METAL MARKET" textFill="WHITE" />
+            </children>
+        </Pane>
+        <Pane layoutX="200.0" layoutY="66.0" prefHeight="64.0" prefWidth="851.0" style="-fx-background-color: #54457F;">
+            <children>
+                <Label layoutX="58.0" layoutY="21.0" text="Profile" textFill="WHITE">
+                    <font>
+                        <Font name="AGA Arabesque Desktop" size="20.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <SplitPane layoutX="200.0" layoutY="130.0" orientation="VERTICAL" prefHeight="576.0" prefWidth="851.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                    <children>
+                        <Label layoutX="538.0" layoutY="1.0" prefHeight="48.0" prefWidth="115.0" text="Balance:" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="27.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="balance" layoutX="665.0" layoutY="1.0" prefHeight="48.0" prefWidth="103.0" text="******" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="804.0" layoutY="16.0" prefHeight="48.0" prefWidth="87.0" text="TL" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="115.0" layoutY="24.0" prefHeight="43.0" prefWidth="176.0" text="My Stocks" underline="true">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                        </Label>
+                        <BarChart layoutX="343.0" layoutY="130.0" prefHeight="404.0" prefWidth="498.0" title="Daily Balance" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </BarChart>
+                  <Label fx:id="lbl" layoutX="56.0" layoutY="82.0" prefHeight="474.0" prefWidth="302.0" text="Label" />
+                    </children></AnchorPane>
+            </items>
+        </SplitPane>
+
+    </children>
+</AnchorPane>
